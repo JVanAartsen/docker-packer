@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-# ADD .staging/packer /usr/local/bin/packer
-
 RUN apt-get update && apt-get install -y \
     curl \
     unzip
@@ -13,4 +11,5 @@ RUN set -x && mkdir -p /usr/src/packer \
     && rm -r /usr/src/packer
 
 RUN packer version
+
 ENTRYPOINT [ "packer" ]
